@@ -1,7 +1,6 @@
 package com.example.cinea.main.data.remote.api
 
 import com.example.cinea.Configuration
-import com.example.cinea.Configuration.API_KEY
 import com.example.cinea.main.data.remote.dto.MediaListDto
 import retrofit2.http.GET
 import retrofit2.http.Path
