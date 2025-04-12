@@ -2,7 +2,12 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.jetbrainsKotlinSerialization)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.dagger.hilt.android.gradle)
 }
+
+apply(plugin = "kotlin-kapt")
 
 android {
     namespace = "com.example.cinea"
@@ -56,4 +61,34 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    //Extended Icons
+    implementation(libs.androidx.material.icons.extended)
+    // Room
+    implementation(libs.bundles.room)
+    annotationProcessor(libs.androidx.room.compiler)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.ksp.gradlePlugin)
+    //retrofit
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.gson)
+    implementation(libs.retrofit.coroutines.adapter)
+    // OkHttp (opcional para logs de red)
+    implementation(libs.okhttp.logging)
+    // Coroutines
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+    //navegation
+    implementation (libs.ui)
+    implementation (libs.androidx.material)
+    implementation (libs.androidx.navigation.compose)
+    implementation(libs.kotlinx.serialization.json)
+    // Coil (uso general)
+    implementation(libs.coil)
+    // Coil para Jetpack Compose
+    implementation(libs.coil.compose)
+    // Hilt
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
+    ksp(libs.hilt.compiler)
+
 }
